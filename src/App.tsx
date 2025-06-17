@@ -33,10 +33,10 @@ function App() {
     <ErrorBoundary FallbackComponent={ErrorFallback}>
       <QueryClientProvider client={queryClient}>
         <ThemeProvider>
-          <AnimationProvider>            <Router>
+          <AnimationProvider>            
+            <Router basename="/Portfolio-Milton-Armando">
               <ScrollToTop />
-              <Layout>
-                <Routes>
+              <Layout>                <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/about" element={<About />} />
                   <Route path="/projects" element={<Projects />} />
@@ -45,6 +45,8 @@ function App() {
                   <Route path="/certifications" element={<Certifications />} />
                   <Route path="/contact" element={<Contact />} />
                   <Route path="/blog" element={<Blog />} />
+                  {/* Fallback route for any unmatched paths */}
+                  <Route path="*" element={<Home />} />
                 </Routes>
               </Layout>
               <Toaster 

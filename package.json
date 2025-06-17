@@ -5,8 +5,7 @@
   "author": "Milton Armando <miltonarmando@outlook.com>",
   "private": true,
   "version": "1.0.0",
-  "type": "module",
-  "scripts": {
+  "type": "module",  "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint .",
@@ -20,7 +19,9 @@
     "prebuild": "npm run clean",
     "prepare": "husky install",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "build:github": "npm run build && copy dist\\index.html dist\\404.html",
+    "preview:github": "npm run build:github && npm run preview"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",

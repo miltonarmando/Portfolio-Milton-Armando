@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/Badge'
 import { Card, CardContent } from '@/components/ui/Card'
 import { Magnetic, Floating, Pulse } from '@/components/ui/AdvancedMotion'
 import { tokens, compositions } from '@/components/ui/theme'
-import { cn } from '@/utils'
+import { cn, getAssetUrl } from '@/utils'
 import { 
   RocketLaunch, 
   Train, 
@@ -103,10 +103,18 @@ export function Home() {
                 "w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-40 lg:h-40 xl:w-44 xl:h-44 rounded-full mx-auto relative overflow-hidden",
                 "bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-1",
                 "shadow-xl sm:shadow-2xl shadow-indigo-500/25"
-              )}>                <div className="w-full h-full rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center overflow-hidden">                  <img 
-                    src="/assets/img/profile.jpg" 
+              )}>                <div className="w-full h-full rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center overflow-hidden">
+                  <img 
+                    src={getAssetUrl("assets/img/profile.jpg")} 
                     alt="Milton Armando" 
                     className="w-full h-full object-cover rounded-full"
+                    onError={(e) => {
+                      // Fallback for image loading issues
+                      const target = e.target as HTMLImageElement;
+                      if (!target.src.includes('/Portfolio-Milton-Armando/')) {
+                        target.src = '/Portfolio-Milton-Armando/assets/img/profile.jpg';
+                      }
+                    }}
                   />
                 </div>
               </div>
