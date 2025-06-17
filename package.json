@@ -1,10 +1,10 @@
 {
-  "name": "corra_contra_o_tempo",
-  "homepage": "https://miltonarmando.github.io/corra_contra_o_tempo",
-  "description": "A React-based web application for the game 'Corra Contra o Tempo', featuring a timer, score tracking, and interactive gameplay.",
-  "author": "Milton Armando <tekinova.inc@icloud.com>",
+  "name": "milton-armando-portfolio",
+  "homepage": "https://miltonarmando.github.io/Portfolio-Milton-Armando",
+  "description": "Professional portfolio showcasing Milton Armando's expertise in AI/ML, DevOps, Industrial IoT, and full-stack development.",
+  "author": "Milton Armando <miltonarmando@outlook.com>",
   "private": true,
-  "version": "0.0.1",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",

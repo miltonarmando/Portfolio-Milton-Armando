@@ -6,12 +6,15 @@ import { ThemeProvider } from './providers/ThemeProvider'
 import { AnimationProvider } from './providers/AnimationProvider'
 import { Layout } from './layouts/Layout'
 import { Home } from './pages/Home'
-import { Components } from './pages/Components'
-import { Documentation } from './pages/Documentation'
-import { Playground } from './pages/Playground'
-import { Showcase } from './pages/Showcase'
-import { ShowcasePage } from './pages/showcase/index'
+import { About } from './pages/About'
+import { Projects } from './pages/Projects'
+import { Skills } from './pages/Skills'
+import { Experience } from './pages/Experience'
+import { Certifications } from './pages/Certifications'
+import { Contact } from './pages/Contact'
+import { Blog } from './pages/Blog'
 import { ErrorFallback } from './components/ErrorFallback'
+import { ScrollToTop } from './components/common/ScrollToTop'
 import './index.css'
 
 const queryClient = new QueryClient({
@@ -30,14 +33,18 @@ function App() {
     <ErrorBoundary FallbackComponent={ErrorFallback}>
       <QueryClientProvider client={queryClient}>
         <ThemeProvider>
-          <AnimationProvider>            <Router>              <Layout>
+          <AnimationProvider>            <Router>
+              <ScrollToTop />
+              <Layout>
                 <Routes>
                   <Route path="/" element={<Home />} />
-                  <Route path="/components" element={<Components />} />
-                  <Route path="/documentation" element={<Documentation />} />
-                  <Route path="/playground" element={<Playground />} />
-                  <Route path="/showcase" element={<Showcase />} />
-                  <Route path="/showcase-detailed" element={<ShowcasePage />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/projects" element={<Projects />} />
+                  <Route path="/skills" element={<Skills />} />
+                  <Route path="/experience" element={<Experience />} />
+                  <Route path="/certifications" element={<Certifications />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/blog" element={<Blog />} />
                 </Routes>
               </Layout>
               <Toaster 

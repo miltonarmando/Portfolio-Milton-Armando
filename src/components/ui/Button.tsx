@@ -10,11 +10,11 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const sizeMap = {
-  xs: 'h-7 px-2.5 text-xs font-medium',
-  sm: 'h-8 px-3 text-sm font-medium',
-  md: 'h-10 px-4 text-sm font-semibold',
-  lg: 'h-11 px-6 text-base font-semibold',
-  xl: 'h-12 px-8 text-base font-semibold',
+  xs: 'h-7 px-2.5 text-xs sm:text-sm font-medium font-touch-friendly',
+  sm: 'h-8 px-3 text-sm sm:text-base font-medium font-touch-friendly',
+  md: 'h-10 px-4 text-sm sm:text-base font-semibold font-touch-friendly',
+  lg: 'h-11 px-6 text-base sm:text-lg font-semibold font-touch-friendly',
+  xl: 'h-12 px-8 text-base sm:text-lg md:text-xl font-semibold font-touch-friendly',
   icon: 'h-10 w-10 p-0'
 }
 

@@ -92,10 +92,36 @@
   ::selection {
     @apply bg-primary/20 text-primary-foreground;
   }
-
   /* Focus visible */
   :focus-visible {
     @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  /* Advanced Mobile Optimizations */
+  @supports (hover: hover) and (pointer: fine) {
+    .hover-effect:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  /* Touch-friendly interactions */
+  .touch-manipulation {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Improved mobile scrolling */
+  .scroll-smooth {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+
+  /* High DPI display optimizations */
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .crisp-edges {
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+    }
   }
 }
 
@@ -172,6 +198,10 @@
     animation: shimmer 2s infinite;
   }
 
+  .animate-shimmer {
+    animation: shimmer 2s infinite linear;
+  }
+
   /* Floating animation */
   .float {
     animation: float 6s ease-in-out infinite;
@@ -203,7 +233,114 @@
     background-image: radial-gradient(circle, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
     background-size: 20px 20px;
   }
+
+  /* Responsive font sizing utilities */
+  .text-responsive-xs { 
+    @apply text-xs sm:text-sm; 
+  }
+  
+  .text-responsive-sm { 
+    @apply text-sm sm:text-base; 
+  }
+  
+  .text-responsive-base { 
+    @apply text-sm sm:text-base md:text-lg; 
+  }
+  
+  .text-responsive-lg { 
+    @apply text-base sm:text-lg md:text-xl; 
+  }
+  
+  .text-responsive-xl { 
+    @apply text-lg sm:text-xl md:text-2xl; 
+  }
+  
+  .text-responsive-2xl { 
+    @apply text-xl sm:text-2xl md:text-3xl; 
+  }
+  
+  .text-responsive-3xl { 
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl; 
+  }
+  
+  .text-responsive-4xl { 
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl; 
+  }
+
+  /* Mobile-first typography scaling */
+  @media (max-width: 640px) {
+    html {
+      font-size: 15px; /* Slightly smaller base for small screens */
+    }
+  }
+
+  @media (min-width: 641px) and (max-width: 768px) {
+    html {
+      font-size: 16px; /* Standard base for tablets */
+    }
+  }
+
+  @media (min-width: 769px) {
+    html {
+      font-size: 16px; /* Standard base for desktop */
+    }
+  }
+
+  /* Touch-optimized font weights */
+  .font-touch-friendly {
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Better line heights for mobile reading */
+  .leading-mobile-friendly {
+    line-height: 1.6;
+  }
+
+  @media (max-width: 640px) {
+    .leading-mobile-friendly {
+      line-height: 1.7;
+    }
+  }
+
+  /* Custom animations */
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  /* Smooth scrolling for better UX */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom gradient utilities */
+  .bg-gradient-brand {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+
+  .bg-gradient-brand-subtle {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 25%, #4facfe 50%, #00f2fe 100%);
+    opacity: 0.1;
+  }
+
+  /* Enhanced focus styles for accessibility */
+  .focus-visible\:ring-brand:focus-visible {
+    ring-color: hsl(var(--primary));
+  }
+
+  /* Custom backdrop blur */
+  .backdrop-blur-brand {
+    backdrop-filter: blur(12px) saturate(1.8);
+  }
 }
+
+/* ...existing code... */
 
 @keyframes slide-in-from-bottom {
   from {
